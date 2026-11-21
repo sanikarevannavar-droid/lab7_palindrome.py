@@ -1,9 +1,15 @@
+import sys
 
 def check_palindrome(text):
     text = text.lower().replace(" ", "")
     return text == text[::-1]
 
-string = input("Enter a string: ")
+if len(sys.argv) > 1:
+    string = sys.argv[1]
+else:
+    string = "madam"
+
+print("String:", string)
 
 if check_palindrome(string):
     print("The string is a palindrome")
